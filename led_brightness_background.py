@@ -4,7 +4,7 @@ import RPi.GPIO as gpio
 import time
 import json
 
-with open('led_brightness_multiple.txt','r') as f:
+with open('/usr/liv/cgi-bin/led_brightness_multiple.txt','r') as f:
   data = json.load(f)
 
 dutyCycle = float(data['slider'])
