@@ -8,13 +8,7 @@ with open('led_brightness_multiple.txt','r') as f:
   data = json.load(f)
 
 dutyCycle = float(data['slider'])
-
-if ('1' in data['menu_choice']):
-  ledPin = 12
-elif ('2' in data['menu_choice']): 
-  ledPin = 13
-else:
-  ledPin = 14
+ledPin = data['LED']
 
 gpio.setmode(gpio.BCM)
 gpio.setup(ledPin, gpio.OUT)
