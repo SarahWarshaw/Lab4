@@ -6,14 +6,13 @@ print("Content-type: text/html\n\n")
 data = cgi.FieldStorage()
 s1 = data.getvalue('LED')
 s2 = data.getvalue('slider')
-data = {"menu_choice":s1, "slider":s2}
+data = {"LED":s1, "slider":s2}
 with open('led_brightness_multiple.txt','w') as f:
   json.dump(data,f)
 
 print("""
 <html>
 <head>
-<meta http-equiv="refresh" content="30">
 </head>
 <body>
 <div style="width:600px;background:#71F282;border:1px;text-align:center">
