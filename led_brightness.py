@@ -2,6 +2,7 @@
 import cgi
 import json
 
+print("Content-type: text/html\n\n")
 data = cgi.FieldStorage()
 s1 = data.getvalue('LED')
 s2 = data.getvalue('slider')
@@ -10,7 +11,6 @@ with open('led_brightness_multiple.txt','w') as f:
   json.dump(data,f)
 
 print("""
-Content-type:text/html\n\n
 <html>
 <head>
 <meta http-equiv="refresh" content="30">
